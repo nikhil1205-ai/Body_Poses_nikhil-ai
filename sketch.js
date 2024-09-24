@@ -1,18 +1,11 @@
 let capture;
 let posNet;
 let singlePoses,skeleton;
-let nosex;
-let nosey;
-let leftEyex;
-let leftEyey;
-let rightEyex;
-let rightEyey;
 
 
 function setup() {
     createCanvas(800, 500);
     capture = createCapture(VIDEO);
-    // capture.size(640, 480);
     capture.hide(); 
 
     posNet = ml5.poseNet(capture, modelReady);
@@ -28,15 +21,6 @@ function receivedPoses(poses) {
         singlePoses=poses[0].pose;
         skeleton=poses[0].skeleton;
         console.log(skeleton)
-       
-        // nosex=sing.keypoints[0].position.x;
-        // nosey=sing.keypoints[0].position.y;
-
-        // leftEyex=sing.keypoints[1].position.x;
-        // leftEyey=sing.keypoints[1].position.y;
-
-        // rightEyex=sing.keypoints[2].position.x;
-        // rightEyey=sing.keypoints[2].position.y;
        
     }
 
